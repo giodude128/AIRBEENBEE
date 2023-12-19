@@ -1,0 +1,33 @@
+.hidden {
+    display: none
+}
+
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+
+.logo-img {
+    width: 100px;
+    cursor: pointer
+}
+
+.list-wrapper {
+    list-style: none;
+
+
+}
+
+.list-wrapper li {
+    margin-bottom: 5px;
+
+}
+
+@media screen and (max-width: 576px) {
+    .logo-img {
+        width: 80px;
+    }
+
+}
