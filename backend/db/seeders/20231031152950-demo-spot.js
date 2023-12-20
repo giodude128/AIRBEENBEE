@@ -13,43 +13,81 @@ module.exports = {
     await Spot.bulkCreate([
       {
         ownerId: 1,
-        address: '123 Gio street',
+        address: '12345 Orange street',
         city: 'Los Alamitos',
         state: 'CA',
         country: 'USA',
         lat: 23.56,
-        lng: 56.34,
-        name: 'Gio',
+        lng: 51.24,
+        name: 'Family Home',
         description: 'somewhere',
-        price: 850000,
-        previewImage: 'image url'
+        price: 500,
+        // previewImage: 'https://img.freepik.com/free-photo/house-isolated-field_1303-23773.jpg'
       },
-
       {
         ownerId: 2,
-        address: '234 Light street',
+        address: '23456 Citrus street',
         city: 'Cerritos',
         state: 'CA',
         country: 'USA',
-        lat: 23.23,
-        lng: 56.67,
-        name: 'Light',
-        description: 'where',
-        price: 650000,
-        previewImage: 'image url'
+        lat: 27.21,
+        lng: 54.57,
+        name: 'Matt',
+        description: 'Ranch',
+        price: 600,
+        // previewImage: 'https://www.shutterstock.com/image-photo/luxurious-new-construction-home-bellevue-600nw-555325381.jpg'
       },
       {
         ownerId: 3,
-        address: '123 Z street',
+        address: '45678 Lime street',
         city: 'Cypress',
         state: 'CA',
         country: 'USA',
         lat: 31.5,
-        lng: 32.5,
-        name: 'Z',
-        description: 'idk',
-        price: 95,
-        previewImage: 'image url'
+        lng: 38.4,
+        name: 'Susy',
+        description: 'Family House',
+        price: 550,
+        // previewImage: 'https://charlotte.axios.com/wp-content/uploads/2022/01/hot-homes-charlotte.jpeg'
+      },
+      {
+        ownerId: 4,
+        address: '67890 Apple street',
+        city: 'Buena Park',
+        state: 'CA',
+        country: 'USA',
+        lat: 21.23,
+        lng: 44.67,
+        name: 'Vincent',
+        description: 'Cozy House',
+        price: 300,
+        // previewImage: 'https://images.squarespace-cdn.com/content/v1/61b72f8a523efa519546e0e5/1658765826106-A88HFK5FUVUJ7S9M6VE7/1932+Single+Family+house+New+Orleans+Louisiana+-+front+view+3.jpg'
+      },
+      {
+        ownerId: 5,
+        address: '237456 Beach street',
+        city: 'Seal Beach',
+        state: 'CA',
+        country: 'USA',
+        lat: 27.23,
+        lng: 55.67,
+        name: 'Edmarc',
+        description: 'Beach House',
+        price: 1000,
+        // previewImage: 'https://pattersoncustomhomes.com/wp-content/uploads/2018/11/modern-beach-house-exterior-bay.jpg'
+      },
+      {
+        ownerId: 6,
+        address: '487 Sunset street',
+        city: 'Lakewood',
+        state: 'CA',
+        country: 'USA',
+        lat: 33.23,
+        lng: 36.69,
+        name: 'Dan',
+        description: 'Quiet home',
+        price: 250,
+        // previewImage: 'https://photos.zillowstatic.com/fp/982b2d08feb1dd79878dadd6f8ae3295-p_e.jpg'
       }
     ], { validate: true });
   },
@@ -58,7 +96,7 @@ module.exports = {
     options.tableName = 'Spots';
     const Op = Sequelize.Op;
     return queryInterface.bulkDelete(options, {
-      name: { [Op.in]: ['Gio', 'Light', 'Z'] }
+      ownerId: { [Op.in]: ['1', '2', '3', '4', '5', '6'] }
     }, {});
   }
 };

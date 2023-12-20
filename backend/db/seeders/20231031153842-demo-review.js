@@ -4,7 +4,7 @@ const { Review } = require('../models');
 
 let options = {};
 if (process.env.NODE_ENV === 'production') {
-  options.schema = process.env.SCHEMA;  
+  options.schema = process.env.SCHEMA;
 }
 
 /** @type {import('sequelize-cli').Migration} */
@@ -28,6 +28,24 @@ module.exports = {
         userId: 3,
         review: 'horrible',
         stars: 1
+      },
+      {
+        spotId: 4,
+        userId: 4,
+        review: 'bad',
+        stars: 1
+      },
+      {
+        spotId: 5,
+        userId: 5,
+        review: 'noice',
+        stars: 4
+      },
+      {
+        spotId: 6,
+        userId: 6,
+        review: 'amazing',
+        stars: 5
       }
     ], options, { validate: true });
   },
@@ -36,7 +54,7 @@ module.exports = {
     options.tableName = 'Reviews';
     const Op = Sequelize.Op;
     return queryInterface.bulkDelete(options, {
-      review: { [Op.in]: ['okay', 'great', 'horrible'] }
+      review: { [Op.in]: ['okay', 'great', 'horrible', 'bad', 'noice', 'amazing'] }
     }, {});
 
   }
