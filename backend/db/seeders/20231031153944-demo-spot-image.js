@@ -15,7 +15,7 @@ module.exports = {
       {
         spotId: 1,
         url: 'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg',
-        preview: false
+        preview: true
       },
       {
         spotId: 2,
