@@ -86,7 +86,7 @@ module.exports = {
         lat: 33.23,
         lng: 36.69,
         name: 'Woodland retreat',
-        description: 'Escape to a serene woodland hideaway! Cozy 4-bed cabin with panoramic forest views, crackling fireplace, and a charming outdoor deck. Embrace nature`s tranquility, explore nearby hiking trails, and relish a peaceful retreat in this enchanting forest getaway.',
+        description: 'Escape to a serene woodland hideaway! Cozy 4-bed cabin with panoramic forest views, crackling fireplace, and a charming outdoor deck. Embrace nature`s tranquility, explore nearby hiking trails, and relish a peaceful retreat in this enchanting forest getaway',
         price: 200,
         previewImage: 'https://www.neighbor.com/storage-blog/wp-content/uploads/2020/03/AdobeStock_89298214-min_8421efb06b9d433a6f2f17d886703510_2000-550x367.jpeg'
       }
