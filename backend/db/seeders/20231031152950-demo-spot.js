@@ -47,7 +47,7 @@ module.exports = {
         lat: 31.5,
         lng: 38.4,
         name: 'Party House',
-        description: 'Vibrant 5-bed party house with entertainment area, top-notch sound system, game room, and private patio for lively gatherings. Perfect for embracing a vibrant atmosphere with nearby nightlife and trendy hotspots.',
+        description: 'Vibrant 5-bed party house with entertainment area, top-notch sound system, game room, and private patio for lively gatherings. Perfect for embracing a vibrant atmosphere with nearby nightlife and trendy hotspots',
         price: 500,
         previewImage: 'https://mygate.com/wp-content/uploads/2023/07/110.jpg'
       },
