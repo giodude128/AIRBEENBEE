@@ -34,7 +34,7 @@ module.exports = {
         lat: 27.21,
         lng: 54.57,
         name: 'Quiet area',
-        description: 'Secluded 10-bed sanctuary in serene locale, featuring spacious rooms, charming communal areas, and a tranquil garden. Enjoy privacy amidst nearby attractions, an ideal haven for a luxurious, peaceful getaway',
+        description: 'Secluded 10-bed sanctuary in serene locale, featuring spacious rooms, charming communal areas, and a tranquil garden. Enjoy privacy amidst nearby attractions, an ideal haven for a luxurious, peaceful getaway.',
         price: 600,
         previewImage: 'https://www.jamesedition.com/stories/wp-content/uploads/2022/03/mansions_main_fin.jpg'
       },
