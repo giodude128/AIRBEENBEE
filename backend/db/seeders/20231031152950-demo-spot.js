@@ -34,7 +34,7 @@ module.exports = {
         lat: 27.21,
         lng: 54.57,
         name: 'Quiet area',
-        description: 'Secluded 10-bed sanctuary in serene locale, featuring spacious rooms, charming communal areas, and a tranquil garden. Enjoy privacy amidst nearby attractions, an ideal haven for a luxurious, peaceful getaway.',
+        description: 'Secluded 10-bed sanctuary in serene locale, featuring spacious rooms, charming communal areas, and a tranquil garden. Enjoy privacy amidst nearby attractions, an ideal haven for a luxurious, peaceful getaway',
         price: 600,
         previewImage: 'https://www.jamesedition.com/stories/wp-content/uploads/2022/03/mansions_main_fin.jpg'
       },
@@ -47,7 +47,7 @@ module.exports = {
         lat: 31.5,
         lng: 38.4,
         name: 'Party House',
-        description: 'Vibrant 5-bed party house with entertainment area, top-notch sound system, game room, and private patio for lively gatherings. Perfect for embracing a vibrant atmosphere with nearby nightlife and trendy hotspots.',
+        description: 'Vibrant 5-bed party house with entertainment area, top-notch sound system, game room, and private patio for lively gatherings. Perfect for embracing a vibrant atmosphere with nearby nightlife and trendy hotspots',
         price: 500,
         previewImage: 'https://mygate.com/wp-content/uploads/2023/07/110.jpg'
       },
