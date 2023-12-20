@@ -14,32 +14,32 @@ module.exports = {
     await SpotImage.bulkCreate([
       {
         spotId: 1,
-        url: 'https://img.freepik.com/free-photo/house-isolated-field_1303-23773.jpg',
+        url: 'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg',
         preview: false
       },
       {
         spotId: 2,
-        url: 'https://www.shutterstock.com/image-photo/luxurious-new-construction-home-bellevue-600nw-555325381.jpg',
+        url: 'https://www.jamesedition.com/stories/wp-content/uploads/2022/03/mansions_main_fin.jpg',
         preview: true
       },
       {
         spotId: 3,
-        url: 'https://charlotte.axios.com/wp-content/uploads/2022/01/hot-homes-charlotte.jpeg',
+        url: 'https://mygate.com/wp-content/uploads/2023/07/110.jpg',
         preview: true
       },
       {
         spotId: 4,
-        url: 'https://images.squarespace-cdn.com/content/v1/61b72f8a523efa519546e0e5/1658765826106-A88HFK5FUVUJ7S9M6VE7/1932+Single+Family+house+New+Orleans+Louisiana+-+front+view+3.jpg',
+        url: 'https://cdn.captivatinghouses.com/wp-content/uploads/2023/06/IMG_1543.jpeg',
         preview: true
       },
       {
         spotId: 5,
-        url: 'https://pattersoncustomhomes.com/wp-content/uploads/2018/11/modern-beach-house-exterior-bay.jpg',
+        url: 'https://hips.hearstapps.com/hmg-prod/images/cayman-islands-villa-kempa-kai-2020-021-1616076929.jpg',
         preview: true
       },
       {
         spotId: 6,
-        url: 'https://photos.zillowstatic.com/fp/982b2d08feb1dd79878dadd6f8ae3295-p_e.jpg',
+        url: 'https://www.neighbor.com/storage-blog/wp-content/uploads/2020/03/AdobeStock_89298214-min_8421efb06b9d433a6f2f17d886703510_2000-550x367.jpeg',
         preview: true
       }
     ], options, { validate: true });
