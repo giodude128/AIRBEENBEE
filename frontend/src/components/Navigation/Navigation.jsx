@@ -1,49 +1,83 @@
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
-import OpenModalButton from '../OpenModalButton';
-import LoginFormModal from '../LoginFormModal';
-import SignupFormModal from '../SignupFormModal/SignupFormModal';
+import OpenModalButton from '../OpenModalButton/OpenModalButton';
+import LoginFormModal from '../LoginFormModal/LoginFormModal';
+import SignupFormModal from '../SignUpFormModal/SignupFormModal';
+import { useEffect, useState, useRef } from 'react';
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {
-  const sessionUser = useSelector((state) => state.session.user);
+  const currentUser = useSelector((state) => state.session.user);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef();
 
-  let sessionLinks;
-  if (sessionUser) {
-    sessionLinks = (
-      <li>
-        <ProfileButton user={sessionUser} />
-      </li>
+  const toggleDropdown = (e) => {
+    e.stopPropagation();
+    setShowDropdown(!showDropdown);
+  };
+
+  useEffect(() => {
+    if (!showDropdown) return;
+
+    const closeDropdown = (e) => {
+      if (!dropdownRef.current.contains(e.target)) {
+        setShowDropdown(false);
+      }
+    };
+
+    document.addEventListener('click', closeDropdown);
+
+    return () => document.removeEventListener('click', closeDropdown);
+  }, [showDropdown]);
+
+  const dropdownClassName = 'nav-dropdown' + (showDropdown ? '' : ' hidden');
+
+  let navigationLinks;
+  if (currentUser) {
+    navigationLinks = (
+      <>
+        <NavLink to='/spots/new' className='newSpot'>Create A Spot</NavLink>
+        <ProfileButton user={currentUser} />
+      </>
     );
   } else {
-    sessionLinks = (
+    navigationLinks = (
       <>
-      <li>
-        <OpenModalButton
-          buttonText="Log In"
-          modalComponent={<LoginFormModal />}
-        />
-      </li>
-      <li>
-        <OpenModalButton
-          buttonText="Sign Up"
-          modalComponent={<SignupFormModal />}
-        />
-      </li>
-
+        <ul>
+          <button onClick={toggleDropdown} className='menu'>
+            <i className="fa-solid fa-bars"></i>
+            <i className="fa-regular fa-user"></i>
+          </button>
+          <ul className={dropdownClassName} ref={dropdownRef}>
+            <div className='buttoncontainer'>
+              <OpenModalButton
+                buttonText="Log In"
+                className='login'
+                modalComponent={<LoginFormModal />}
+              />
+              <OpenModalButton
+                buttonText="Sign Up"
+                className='signup'
+                modalComponent={<SignupFormModal />}
+              />
+            </div>
+          </ul>
+        </ul>
       </>
     );
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink to="/">Home</NavLink>
-      </li>
-      {isLoaded && sessionLinks}
+    <ul className='navbar'>
+      <>
+        <NavLink to="/" className='homelink'><i className="fa-solid fa-mountain-city"></i> AIRBEENBEE </NavLink>
+      </>
+      <div className='newSpotAndMenu'>
+        {isLoaded && navigationLinks}
+      </div>
     </ul>
   );
 }
 
-export default Navigation
+export default Navigation;

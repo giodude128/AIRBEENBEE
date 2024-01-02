@@ -1,31 +1,31 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useModal } from '../../context/Modal';
+import { ModalProvider } from '../../context/Modal';
 import * as sessionActions from '../../store/session';
 import './SignupForm.css';
 
 function SignupFormModal() {
   const dispatch = useDispatch();
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [inputEmail, setInputEmail] = useState("");
+  const [inputUsername, setInputUsername] = useState("");
+  const [inputFirstName, setInputFirstName] = useState("");
+  const [inputLastName, setInputLastName] = useState("");
+  const [inputPassword, setInputPassword] = useState("");
+  const [inputConfirmPassword, setInputConfirmPassword] = useState("");
   const [errors, setErrors] = useState({});
-  const { closeModal } = useModal();
+  const { closeModal } = ModalProvider();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password === confirmPassword) {
+    if (inputPassword === inputConfirmPassword) {
       setErrors({});
       return dispatch(
         sessionActions.signup({
-          email,
-          username,
-          firstName,
-          lastName,
-          password
+          email: inputEmail,
+          username: inputUsername,
+          firstName: inputFirstName,
+          lastName: inputLastName,
+          password: inputPassword
         })
       )
         .then(closeModal)
@@ -49,8 +49,8 @@ function SignupFormModal() {
           Email
           <input
             type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={inputEmail}
+            onChange={(e) => setInputEmail(e.target.value)}
             required
           />
         </label>
@@ -59,8 +59,8 @@ function SignupFormModal() {
           Username
           <input
             type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={inputUsername}
+            onChange={(e) => setInputUsername(e.target.value)}
             required
           />
         </label>
@@ -69,8 +69,8 @@ function SignupFormModal() {
           First Name
           <input
             type="text"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
+            value={inputFirstName}
+            onChange={(e) => setInputFirstName(e.target.value)}
             required
           />
         </label>
@@ -79,8 +79,8 @@ function SignupFormModal() {
           Last Name
           <input
             type="text"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
+            value={inputLastName}
+            onChange={(e) => setInputLastName(e.target.value)}
             required
           />
         </label>
@@ -89,8 +89,8 @@ function SignupFormModal() {
           Password
           <input
             type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={inputPassword}
+            onChange={(e) => setInputPassword(e.target.value)}
             required
           />
         </label>
@@ -99,8 +99,8 @@ function SignupFormModal() {
           Confirm Password
           <input
             type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            value={inputConfirmPassword}
+            onChange={(e) => setInputConfirmPassword(e.target.value)}
             required
           />
         </label>

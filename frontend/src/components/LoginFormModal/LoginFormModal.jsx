@@ -6,20 +6,20 @@ import './LoginForm.css';
 
 function LoginFormModal() {
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
-  const [credential, setCredential] = useState("");
-  const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({});
+  const currentUser = useSelector((state) => state.session.user);
+  const [usernameOrEmail, setUsernameOrEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [formErrors, setFormErrors] = useState({});
 
-  if (sessionUser) return <Navigate to="/" replace={true} />;
+  if (currentUser) return <Navigate to="/" replace={true} />;
 
-  const handleSubmit = (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
-    setErrors({});
-    return dispatch(sessionActions.login({ credential, password })).catch(
+    setFormErrors({});
+    return dispatch(sessionActions.login({ credential: usernameOrEmail, password })).catch(
       async (res) => {
         const data = await res.json();
-        if (data?.errors) setErrors(data.errors);
+        if (data?.errors) setFormErrors(data.errors);
       }
     );
   };
@@ -27,13 +27,13 @@ function LoginFormModal() {
   return (
     <>
       <h1>Log In</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleFormSubmit}>
         <label>
           Username or Email
           <input
             type="text"
-            value={credential}
-            onChange={(e) => setCredential(e.target.value)}
+            value={usernameOrEmail}
+            onChange={(e) => setUsernameOrEmail(e.target.value)}
             required
           />
         </label>
@@ -46,7 +46,7 @@ function LoginFormModal() {
             required
           />
         </label>
-        {errors.credential && <p>{errors.credential}</p>}
+        {formErrors.credential && <p>{formErrors.credential}</p>}
         <button type="submit">Log In</button>
       </form>
     </>
